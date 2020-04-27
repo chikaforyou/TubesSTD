@@ -1,6 +1,8 @@
 #ifndef NOVEL_H_INCLUDED
 #define NOVEL_H_INCLUDED
 #include <iostream>
+#include <conio.h>
+#include <stdlib.h>
 #define first(L) L.first
 #define next(P) P->next
 #define info(P) P->info

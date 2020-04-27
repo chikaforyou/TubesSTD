@@ -51,24 +51,26 @@
 	"novel.h"
 	"menu.h"
 
-1587625140 e:\new folder\tubesstd\penulis.h
+1587996750 e:\new folder\tubesstd\penulis.h
 	<iostream>
 
-1587625166 e:\new folder\tubesstd\novel.h
+1587999790 e:\new folder\tubesstd\novel.h
 	<iostream>
+	<conio.h>
+	<stdlib.h>
 
-1587873204 e:\new folder\tubesstd\menu.h
+1587999768 e:\new folder\tubesstd\menu.h
 
-1587483645 source:e:\new folder\tubesstd\novel.cpp
+1587996750 source:e:\new folder\tubesstd\novel.cpp
 	<iostream>
 	"novel.h"
 
-1587619004 source:e:\new folder\tubesstd\penulis.cpp
+1587996750 source:e:\new folder\tubesstd\penulis.cpp
 	<iostream>
 	"penulis.h"
 	"novel.h"
 
-1587873204 source:e:\new folder\tubesstd\menu.cpp
+1587999920 source:e:\new folder\tubesstd\menu.cpp
 	"novel.h"
 	"penulis.h"
 	"menu.h"

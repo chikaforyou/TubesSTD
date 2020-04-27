@@ -12,5 +12,7 @@ void SNM(ListP LP);
 void SCA(ListP, ListN LN);
 void menu(ListP &LP, ListN &LN);
 void showPN(ListP LP, ListN LN);
+void manual(ListP LP, ListN LN);
+void SPN(ListN LN, ListP LP);
 
 #endif // MENU_H_INCLUDED
