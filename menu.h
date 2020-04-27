@@ -1,5 +1,7 @@
 #ifndef MENU_H_INCLUDED
 #define MENU_H_INCLUDED
+#include <conio.h>
+#include <stdlib.h>
 
 void AA(ListP &LP, adrP P, ListN LN);
 void AN(ListN &LN, adrN N, ListP LP);

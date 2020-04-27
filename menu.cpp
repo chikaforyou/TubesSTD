@@ -1,7 +1,6 @@
 #include "novel.h"
 #include "penulis.h"
 #include "menu.h"
-//#include <iostream>
 
 void AA(ListP &LP, adrP P, ListN LN) {
     string nama;
@@ -120,7 +119,7 @@ void DN(ListP &LP, ListN &LN, adrR &R, adrN &N){
 }
 
 void SNP(ListN LN, ListP LP){
-    if (first(LP)==NULL || first(LN)==NULL) {
+    if (first(LP)==NULL && first(LN)==NULL) {
         cout<<"List is empty"<<endl;
     } else {
         adrN N = first(LN);
@@ -150,7 +149,7 @@ void SNP(ListN LN, ListP LP){
     menu(LP, LN);
 }
 void SNW(ListN LN, ListP LP) {
-    if (first(LP)==NULL || first(LN)==NULL) {
+    if (first(LP)==NULL && first(LN)==NULL) {
         cout<<"List is empty"<<endl;
     } else {
         bool f = false;
@@ -184,7 +183,7 @@ void SNW(ListN LN, ListP LP) {
     menu(LP, LN);
 }
 void SNM(ListP LP, ListN LN) {
-    if (first(LP)==NULL || first(LN)==NULL) {
+    if (first(LP)==NULL && first(LN)==NULL) {
         cout<<"List is empty"<<endl;
     } else {
         adrP P = first(LP);
@@ -210,7 +209,7 @@ void SNM(ListP LP, ListN LN) {
     menu(LP, LN);
 }
 void SCA(ListN LN, ListP LP) {
-    if (first(LP)==NULL || first(LN)==NULL) {
+    if (first(LP)==NULL && first(LN)==NULL) {
         cout<<"List is empty"<<endl;
     } else {
         adrP P = first(LP);
@@ -247,7 +246,7 @@ void SCA(ListN LN, ListP LP) {
 }
 
 void showPN(ListP LP, ListN LN) {
-    if (first(LP)==NULL || first(LN)==NULL) {
+    if (first(LP)==NULL && first(LN)==NULL) {
         cout<<"List is empty"<<endl;
     } else {
         adrP P = first(LP);
@@ -275,7 +274,7 @@ void showPN(ListP LP, ListN LN) {
     menu(LP, LN);
 }
 void SPN (ListN LN, ListP LP) {
-    if (first(LP)==NULL || first(LN)==NULL) {
+    if (first(LP)==NULL && first(LN)==NULL) {
         cout<<"List is empty"<<endl;
     } else {
         string penulis;
@@ -299,16 +298,15 @@ void SPN (ListN LN, ListP LP) {
 }
 void manual(ListP LP, ListN LN) {
     cout<<"1. Type 'stop' untuk berhenti menginput."<<endl;
-    cout<<"2. Type 'quit' untuk menutup dari program."<<endl;
-    cout<<"3. Jangan melakukan delete author terlebih dahulu sebelum"<<endl;
-    cout<<"   melakukan delete novel."<<endl;
+    cout<<"3. Type '13' untuk membersihkan tampilan."<<endl;
+    cout<<"3. Type '14' untuk menutup dari program."<<endl;
     cout<<endl;
     cout<<"______________________________________"<<endl;
     menu(LP, LN);
 }
 
 void menu(ListP &LP, ListN &LN) {
-    string x;
+    int x;
 
     adrP P;
     adrN N;
@@ -326,38 +324,38 @@ void menu(ListP &LP, ListN &LN) {
 	cout<<"Pilih menu: ";
 	cin>>x;
 	system("CLS");
-	if (x=="1") {
+	if (x==1) {
         AA(LP, P, LN);
-	} else if (x=="2") {
+	} else if (x==2) {
         AN(LN, N, LP);
-	} else if (x=="3") {
+	} else if (x==3) {
         conn(LP, LN);
-	} else if (x=="4") {
+	} else if (x==4) {
         DA(LP, LN, P);
-	} else if (x=="5") {
-       DN(LP, LN, R, N);
-	} else if (x=="6") {
+	} else if (x==5) {
+        DN(LP, LN, R, N);
+	} else if (x==6) {
         SPN(LN, LP);
-	} else if (x=="7") {
+	} else if (x==7) {
         SNW(LN, LP);
-	} else if (x=="8") {
+	} else if (x==8) {
         SNM(LP, LN);
-	} else if (x=="9") {
+	} else if (x==9) {
         SCA(LN, LP);
-	} else if (x=="10") {
+	} else if (x==10) {
         showPN(LP, LN);
-    } else if (x=="11") {
+    } else if (x==11) {
         SNP(LN, LP);
-    } else if (x=="12") {
+    } else if (x==12) {
         manual(LP, LN);
-    } else if (x=="clear") {
+    } else if (x==13) {
         system("CLS");
         cout<<"Cleared"<<endl;
         cout<<endl;
         system("pause");
         cout<<endl;
         menu(LP, LN);
-	} else if (x=="quit") {
+	} else if (x==14) {
         cout<<"Close Program"<<endl;
 	} else {
         cout<<"Not found, try again!"<<endl;
