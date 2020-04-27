@@ -21,6 +21,10 @@ struct ListN {
 void createList(ListN &L);
 adrN createNewN(string nama);
 void addN(ListN &L, adrN P);
+void deleteN(ListN &L, adrN P);
+void deleteFirstN(ListN &L, adrN &P);
+void deleteLastN(ListN &L);
+void deleteAfterN(ListN &L, adrN prec);
 adrN findN(ListN L, string nama);
 void showN(ListN L);
 
