@@ -118,12 +118,10 @@ void deleteR(ListP &L, adrR P) {
                     } else if (nextR(R) == NULL) {
                         deleteLastR(L, Q);
                     } else {
-                        cout<<infoR(P);
                         prec = firstR(Q);
                         while (infoR(nextR(prec)) != infoR(P)) {
                             prec = nextR(prec);
                         }
-                        cout<<infoR(prec);
                         deleteAfterR(prec, Q);
 
                     }
