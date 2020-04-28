@@ -25,7 +25,7 @@ adrR createNewR(string judul) {
 void addP(ListP &L, adrP P) {
     adrP f = findP(L, info(P));
     if (f != NULL) {
-        cout<<"Author had been registered."<<endl;
+        cout<<"Penulis sudah terdaftar."<<endl;
     } else {
         if (first(L) != NULL) {
             adrP Q = first(L);
@@ -75,7 +75,7 @@ void deleteP(ListP &L, adrP P) {
            deleteAfterP(L, prec);
        }
     } else {
-        cout<<"List is empty."<<endl;
+        cout<<"List kosong."<<endl;
     }
 }
 
@@ -130,7 +130,7 @@ void deleteR(ListP &L, adrR P) {
             Q = next(Q);
         }
     } else {
-        cout<<"Failed, list is empty."<<endl;
+        cout<<"Gagal, List kosong."<<endl;
     }
 }
 
@@ -194,14 +194,14 @@ void relasikan(adrP P, adrR R) {
     if (P != NULL && R != NULL) {
         addR(P, R);
     } else {
-        cout<<"Author could not be found."<<endl;
+        cout<<"Penulis tidak ditemukan."<<endl;
     }
 }
 
 void showP(ListP L) {
     adrP P = first(L);
     int i = 0;
-    cout<<endl<<"Registered Author:"<<endl;
+    cout<<endl<<"Penulis yang terdaftar:"<<endl;
     if (first(L) != NULL) {
         while (P != NULL) {
             i++;
@@ -209,7 +209,7 @@ void showP(ListP L) {
             P = next(P);
         }
     } else {
-        cout<<"No Authors are registered."<<endl;
+        cout<<"Belum ada penulis yang terdaftar."<<endl;
     }
     cout<<endl;
 }

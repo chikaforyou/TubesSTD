@@ -15,7 +15,7 @@ adrN createNewN(string nama) {
 void addN(ListN &L, adrN P) {
     adrN f = findN(L, info(P));
     if (f != NULL) {
-        cout<<"Novel had been registered."<<endl;
+        cout<<"Novel sudah terdaftar."<<endl;
     } else {
         if (first(L) != NULL) {
             adrN Q = first(L);
@@ -46,7 +46,7 @@ void deleteN(ListN &L, adrN P) {
            deleteAfterN(L, prec);
        }
     } else {
-        cout<<"List is empty."<<endl;
+        cout<<"List kosong."<<endl;
     }
 }
 
@@ -94,7 +94,7 @@ adrN findN(ListN L, string judul) {
 void showN(ListN L) {
     int i = 0;
     adrN P = first(L);
-    cout<<endl<<"Registered Novel:"<<endl;
+    cout<<endl<<"Novel yang terdaftar:"<<endl;
     if (first(L) != NULL) {
         while (P != NULL) {
             i++;
@@ -102,7 +102,7 @@ void showN(ListN L) {
             P = next(P);
         }
     } else {
-        cout<<"No Novels are registered."<<endl;
+        cout<<"Belum ada novel yang terdaftar."<<endl;
     }
     cout<<endl;
 }
