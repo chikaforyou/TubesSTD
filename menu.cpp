@@ -21,6 +21,7 @@ void AA(ListP &LP, adrP P, ListN LN) {
     cout<<"______________________________________"<<endl;
     menu(LP, LN);
 }
+
 void AN(ListN &LN, adrN N, ListP LP) {
     string judul;
     bool f = false;
@@ -40,6 +41,7 @@ void AN(ListN &LN, adrN N, ListP LP) {
     cout<<"______________________________________"<<endl;
     menu(LP, LN);
 }
+
 void conn(ListP &LP, ListN &LN) {
     bool f = false;
     string nama, judul;
@@ -98,6 +100,7 @@ void DA(ListP &LP, ListN LN, adrP &P){
     cout<<"______________________________________"<<endl;
     menu(LP, LN);
 }
+
 void DN(ListP &LP, ListN &LN, adrR &R, adrN &N){
     string judul;
     showN(LN);
@@ -148,6 +151,7 @@ void SNP(ListN LN, ListP LP){
     cout<<"______________________________________"<<endl;
     menu(LP, LN);
 }
+
 void SNW(ListN LN, ListP LP) {
     if (first(LP)==NULL && first(LN)==NULL) {
         cout<<"List is empty"<<endl;
@@ -182,6 +186,7 @@ void SNW(ListN LN, ListP LP) {
     cout<<"______________________________________"<<endl;
     menu(LP, LN);
 }
+
 void SNM(ListP LP, ListN LN) {
     if (first(LP)==NULL && first(LN)==NULL) {
         cout<<"List is empty"<<endl;
@@ -208,6 +213,7 @@ void SNM(ListP LP, ListN LN) {
     cout<<"______________________________________"<<endl;
     menu(LP, LN);
 }
+
 void SCA(ListN LN, ListP LP) {
     if (first(LP)==NULL && first(LN)==NULL) {
         cout<<"List is empty"<<endl;
@@ -273,6 +279,7 @@ void showPN(ListP LP, ListN LN) {
     cout<<"______________________________________"<<endl;
     menu(LP, LN);
 }
+
 void SPN (ListN LN, ListP LP) {
     if (first(LP)==NULL && first(LN)==NULL) {
         cout<<"List is empty"<<endl;
