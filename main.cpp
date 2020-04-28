@@ -8,11 +8,11 @@ using namespace std;
 int main()
 {
     cout<<"---------------------------------------"<<endl;
-    cout<<"-      Program ini dirancang oleh     -"<<endl;
+    cout<<"-    This Program is engineered by    -"<<endl;
     cout<<"-        Imam Rafiif Arrazaan         -"<<endl;
-    cout<<"-                dan                  -"<<endl;
+    cout<<"-                and                  -"<<endl;
     cout<<"-         Arvinda Dwi Safira          -"<<endl;
-    cout<<"-      Kami dari kelas IF-43-07       -"<<endl;
+    cout<<"-      We're from class IF-43-07      -"<<endl;
     cout<<"---------------------------------------"<<endl;
     system("pause");
     ListN LN;
