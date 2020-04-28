@@ -201,7 +201,7 @@ void relasikan(adrP P, adrR R) {
 void showP(ListP L) {
     adrP P = first(L);
     int i = 0;
-    cout<<endl<<"Registered author:"<<endl;
+    cout<<endl<<"Registered Author:"<<endl;
     if (first(L) != NULL) {
         while (P != NULL) {
             i++;
@@ -209,7 +209,7 @@ void showP(ListP L) {
             P = next(P);
         }
     } else {
-        cout<<"No authors are registered."<<endl;
+        cout<<"No Authors are registered."<<endl;
     }
     cout<<endl;
 }

@@ -94,7 +94,7 @@ adrN findN(ListN L, string judul) {
 void showN(ListN L) {
     int i = 0;
     adrN P = first(L);
-    cout<<endl<<"Registered novel:"<<endl;
+    cout<<endl<<"Registered Novel:"<<endl;
     if (first(L) != NULL) {
         while (P != NULL) {
             i++;
@@ -102,7 +102,7 @@ void showN(ListN L) {
             P = next(P);
         }
     } else {
-        cout<<"No novels are registered."<<endl;
+        cout<<"No Novels are registered."<<endl;
     }
     cout<<endl;
 }

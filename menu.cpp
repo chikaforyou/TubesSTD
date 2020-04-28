@@ -1,4 +1,4 @@
-#include "novel.h"
+#include "Novel.h"
 #include "penulis.h"
 #include "menu.h"
 
@@ -9,7 +9,7 @@ void AA(ListP &LP, adrP P, ListN LN) {
     cout<<"             Add Author"<<endl;
     cout<<"--------------------------------------"<<endl;
     showP(LP);
-    cout<<"Type the name of author:"<<endl;
+    cout<<"Type the name of Author:"<<endl;
     while (!f) {
         cin>>nama;
         if (nama=="stop") {
@@ -31,7 +31,7 @@ void AN(ListN &LN, adrN N, ListP LP) {
     cout<<"             Add Novel"<<endl;
     cout<<"--------------------------------------"<<endl;
     showN(LN);
-    cout<<"Type the title of novel:"<<endl;
+    cout<<"Type the title of Novel:"<<endl;
     while (!f) {
         cin>>judul;
         if (judul=="stop") {
@@ -54,34 +54,34 @@ void conn(ListP &LP, ListN &LN) {
     cout<<"--------------------------------------"<<endl;
     showP(LP);
     showN(LN);
-    cout<<"Type the name of author and the title of novel:"<<endl;
+    cout<<"Type the name of Author and the title of Novel:"<<endl;
     while (!f) {
-        cout<<"The name of author: ";
+        cout<<"The name of Author: ";
         cin>>nama;
         if (nama=="stop") {
             break;
         }
         adrP P = findP(LP, nama);
 
-        cout<<"The title of novel: ";
+        cout<<"The title of Novel: ";
         cin>>judul;
         adrN N = findN(LN, judul);
 
         if (P != NULL && N != NULL) {
             adrR f = findR(P, info(N));
             if (f != NULL) {
-                cout<<"Failed, the author and the novel has been connected."<<endl;
+                cout<<"Failed, the Author and the Novel has been connected."<<endl;
             } else {
                 adrR R = createNewR(info(N));
                 relasikan(P, R);
                 cout<<"Connected."<<endl;
             }
         } else if (P == NULL && N != NULL) {
-            cout<<"Failed, the author hasn't been registered."<<endl;
+            cout<<"Failed, the Author hasn't been registered."<<endl;
         } else if (P != NULL && N == NULL) {
-            cout<<"Failed, the novel hasn't been registered."<<endl;
+            cout<<"Failed, the Novel hasn't been registered."<<endl;
         } else {
-            cout<<"Failed, the author and the novel haven't been registered."<<endl;
+            cout<<"Failed, the Author and the Novel haven't been registered."<<endl;
         }
         cout<<endl;
     }
@@ -97,7 +97,7 @@ void DA(ListP &LP, ListN LN, adrP &P){
     cout<<"--------------------------------------"<<endl;
     showP(LP);
     if (first(LP) != NULL) {
-        cout<<"Type the name of author: ";
+        cout<<"Type the name of Author: ";
         cin>>nama;
         if (nama != "stop") {
             P = findP(LP, nama);
@@ -106,14 +106,14 @@ void DA(ListP &LP, ListN LN, adrP &P){
                 cout<<endl<<"Author "<<nama<<" has been deleted."<<endl;
                 showP(LP);
             } else {
-                cout<<"Failed, the author could not be found."<<endl;
+                cout<<"Failed, the Author could not be found."<<endl;
             }
         } else {
             cout<<endl;
             menu(LP, LN);
         }
     } else {
-        cout<<"No authors could be deleted."<<endl;
+        cout<<"No Authors could be deleted."<<endl;
         cout<<endl;
         menu(LP, LN);
     }
@@ -129,7 +129,7 @@ void DN(ListP &LP, ListN &LN, adrR &R, adrN &N){
     cout<<"--------------------------------------"<<endl;
     showN(LN);
     if (first(LN) != NULL) {
-        cout<<"Type the title of novel: ";
+        cout<<"Type the title of Novel: ";
         cin>>judul;
         if (judul != "stop") {
             N = findN(LN, judul);
@@ -140,14 +140,14 @@ void DN(ListP &LP, ListN &LN, adrR &R, adrN &N){
                 cout<<"Novel "<<judul<<" has been deleted."<<endl;
                 showN(LN);
             } else {
-                cout<<"Failed, the novel could not be found."<<endl;
+                cout<<"Failed, the Novel could not be found."<<endl;
             }
         } else {
             cout<<endl;
             menu(LP, LN);
         }
     } else {
-        cout<<"No novels could be deleted."<<endl;
+        cout<<"No Novels could be deleted."<<endl;
         cout<<endl;
         menu(LP, LN);
     }
@@ -164,25 +164,33 @@ void SNP(ListN LN, ListP LP){
         cout<<"List is empty."<<endl;
     } else {
         adrN N = first(LN);
-        while (N!=NULL) {
-            bool f = false;
-            cout<<"Novel "<<info(N)<<" written by: "<<endl;
-            adrP P = first(LP);
-            while (P!=NULL) {
-                adrR R = firstR(P);
-                while (R!=NULL) {
-                    if (info(N)==infoR(R)) {
-                        f = true;
-                        cout<<"- "<<info(P)<<endl;
+        if(N!=NULL) {
+            while (N!=NULL) {
+                bool f = false;
+                cout<<"Novel "<<info(N)<<" written by: "<<endl;
+                adrP P = first(LP);
+                if (P!=NULL) {
+                    while (P!=NULL) {
+                        adrR R = firstR(P);
+                        while (R!=NULL) {
+                            if (info(N)==infoR(R)) {
+                                f = true;
+                                cout<<"- "<<info(P)<<endl;
+                            }
+                            R=nextR(R);
+                        }
+                        P=next(P);
                     }
-                    R=nextR(R);
+                    if (f = false) {
+                        cout<<"Unknown"<<endl;
+                    }
+                    N=next(N);
+                } else {
+                    cout<<"Could not find any Author."<<endl;
                 }
-                P=next(P);
             }
-            if (f = false) {
-                cout<<"Unknown."<<endl;
-            }
-            N=next(N);
+        } else {
+            cout<<"Could not found any Novel."<<endl;
         }
     }
     cout<<endl;
@@ -197,30 +205,34 @@ void SNW(ListN LN, ListP LP) {
     if (first(LP)==NULL && first(LN)==NULL) {
         cout<<"List is empty."<<endl;
     } else {
-        bool f = false;
         adrN N = first(LN);
-        cout<<"Novel written by 2 authors: "<<endl;
-        while (N!=NULL) {
-            int i = 0;
-            adrP P = first(LP);
-            while (P!=NULL) {
-                adrR R = firstR(P);
-                while (R!=NULL) {
-                    if (info(N)==infoR(R)) {
-                        i++;
+        if (N!= NULL) {
+            cout<<"Novel(s) Written by 2 Authors: "<<endl;
+            bool f = false;
+            while (N!=NULL) {
+                int i = 0;
+                adrP P = first(LP);
+                while (P!=NULL) {
+                    adrR R = firstR(P);
+                    while (R!=NULL) {
+                        if (info(N)==infoR(R)) {
+                            i++;
+                        }
+                        R=nextR(R);
                     }
-                    R=nextR(R);
+                    P=next(P);
                 }
-                P=next(P);
+                if (i==2) {
+                    f = true;
+                    cout<<"- "<<info(N)<<endl;
+                }
+                N=next(N);
             }
-            if (i==2) {
-                f = true;
-                cout<<"- "<<info(N)<<endl;
+            if (f = false) {
+                cout<<"There are no Novels written by 2 Authors."<<endl;
             }
-            N=next(N);
-        }
-        if (f = false) {
-            cout<<"There are no novels written by 2 authors."<<endl;
+        } else {
+            cout<<"Could not found any Novel"<<endl;
         }
     }
     cout<<endl;
@@ -233,35 +245,39 @@ void SNM(ListP LP, ListN LN) {
     cout<<"  Show Author(s) Who Wrote The Most"<<endl;
     cout<<"--------------------------------------"<<endl;
     if (first(LP)==NULL && first(LN)==NULL) {
-        cout<<"List is empty."<<endl;
+        cout<<"List is empty"<<endl;
     } else {
         adrP P = first(LP);
-        int Max = 0;
-        cout<<"Author(s) who wrote novel the most is/are: "<<endl;
-        while (P!=NULL) {
-            int i = 0;
-            adrR R = firstR(P);
-            while (R!=NULL) {
-                i++;
-                R=nextR(R);
+        if (P!=NULL) {
+            int Max = 0;
+            cout<<"Author(s) who wrote Novel the most is/are: "<<endl;
+            while (P!=NULL) {
+                int i = 0;
+                adrR R = firstR(P);
+                while (R!=NULL) {
+                    i++;
+                    R=nextR(R);
+                }
+                if (Max<i){
+                    Max = i;
+                }
+                P=next(P);
             }
-            if (Max<i){
-                Max = i;
+            P = first(LP);
+            while (P!=NULL) {
+                int i = 0;
+                adrR R = firstR(P);
+                while (R!=NULL) {
+                    i++;
+                    R=nextR(R);
+                }
+                if (Max==i) {
+                    cout<<"- "<<info(P)<<endl;
+                }
+                P=next(P);
             }
-            P=next(P);
-        }
-        P = first(LP);
-        while (P!=NULL) {
-            int i = 0;
-            adrR R = firstR(P);
-            while (R!=NULL) {
-                i++;
-                R=nextR(R);
-            }
-            if (Max==i) {
-                cout<<"- "<<info(P)<<endl;
-            }
-            P=next(P);
+        } else {
+            cout<<"Could not found any Author."<<endl;
         }
     }
     cout<<endl;
@@ -277,35 +293,39 @@ void SCA(ListN LN, ListP LP) {
         cout<<"List is empty."<<endl;
     } else {
         adrP P = first(LP);
-        int i;
-        cout<<"Author who never collaborate: "<<endl;
-        while (P!=NULL) {
-            i = 0;
-            adrR R = firstR(P);
-            while (R!=NULL) {
-                adrP Q = first(LP);
-                while (Q!=NULL) {
-                    adrR S = firstR(Q);
-                    while (S!=NULL) {
-                        if (info(P)==info(Q)) {
-                            break;
+        if (P!=NULL) {
+            int i;
+            cout<<"Author who never collaborate: "<<endl;
+            while (P!=NULL) {
+                i = 0;
+                adrR R = firstR(P);
+                while (R!=NULL) {
+                    adrP Q = first(LP);
+                    while (Q!=NULL) {
+                        adrR S = firstR(Q);
+                        while (S!=NULL) {
+                            if (info(P)==info(Q)) {
+                                break;
+                            }
+                            if (infoR(R)==infoR(S)) {
+                                i++;
+                            }
+                            S=nextR(S);
                         }
-                        if (infoR(R)==infoR(S)) {
-                            i++;
-                        }
-                        S=nextR(S);
+                        Q=next(Q);
                     }
-                    Q=next(Q);
+                    R=nextR(R);
                 }
-                R=nextR(R);
+                if (i==0) {
+                    cout<<"- "<<info(P)<<endl;
+                }
+                P=next(P);
             }
-            if (i==0) {
-                cout<<"- "<<info(P)<<endl;
+            if (i != 0) {
+                cout<<"No Authors has never collaborated."<<endl;
             }
-            P=next(P);
-        }
-        if (i != 0) {
-            cout<<"No authors has never collaborated."<<endl;
+        } else {
+            cout<<"Could not found any Author"<<endl;
         }
     }
     cout<<endl;
@@ -318,24 +338,28 @@ void showPN(ListP LP, ListN LN) {
     cout<<"     Show All Authors and Novels"<<endl;
     cout<<"--------------------------------------"<<endl;
     if (first(LP)==NULL && first(LN)==NULL) {
-        cout<<"List is empty"<<endl;
+        cout<<"List is empty."<<endl;
     } else {
         adrP P = first(LP);
-        cout<<"Registered author:"<<endl;
-        while (P != NULL) {
-            cout << "Author: " << info(P) << endl;
-            adrR Q = firstR(P);
-            if (Q != NULL) {
-                while (Q != NULL) {
-                    cout<<"--> Novel: "<<infoR(Q)<<endl;
-                    Q = nextR(Q);
+        if (P!=NULL) {
+            cout<<"Registered Author:"<<endl;
+            while (P != NULL) {
+                cout << "Author: " << info(P) << endl;
+                adrR Q = firstR(P);
+                if (Q != NULL) {
+                    while (Q != NULL) {
+                        cout<<"--> Novel: "<<infoR(Q)<<endl;
+                        Q = nextR(Q);
+                    }
+                    cout<<endl;
+                } else {
+                    cout<<"Novel could not be found."<<endl;
+                    cout<<endl;
                 }
-                cout<<endl;
-            } else {
-                cout<<"Novel could not be found."<<endl;
-                cout<<endl;
+                P = next(P);
             }
-            P = next(P);
+        } else {
+            cout<<"Could not found any Author"<<endl;
         }
     }
     cout<<endl;
@@ -351,15 +375,19 @@ void SPN (ListN LN, ListP LP) {
         cout<<"List is empty."<<endl;
     } else {
         string penulis;
-        cout<<"Type the name of author: ";
+        cout<<"Type the name of Author: ";
         cin>>penulis;
         adrP p = findP(LP, penulis);
         if (p!=NULL) {
             cout<<"Novel(s) that written by "<<info(p)<<" is/are:"<<endl;
             adrR r = firstR(p);
-            while (r!=NULL) {
-                cout<<"- "<<infoR(r)<<endl;
-                r=nextR(r);
+            if (r!=NULL) {
+                while (r!=NULL) {
+                    cout<<"- "<<infoR(r)<<endl;
+                    r=nextR(r);
+                }
+            } else {
+                cout<<"Novel of The Author could not be found"<<endl;
             }
         } else {
             cout<<"The Author could not be found."<<endl;
@@ -411,7 +439,7 @@ void menu(ListP &LP, ListN &LN) {
 	} else if (x==5) {
         DN(LP, LN, R, N);
 	} else if (x==6) {
-        SNP(LN, LP);
+        SPN(LN, LP);
 	} else if (x==7) {
         SNW(LN, LP);
 	} else if (x==8) {
@@ -421,7 +449,7 @@ void menu(ListP &LP, ListN &LN) {
 	} else if (x==10) {
         showPN(LP, LN);
     } else if (x==11) {
-        SPN(LN, LP);
+        SNP(LN, LP);
     } else if (x==12) {
         manual(LP, LN);
     } else if (x==13) {
