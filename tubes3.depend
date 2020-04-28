@@ -119,16 +119,16 @@
 	<conio.h>
 	<stdlib.h>
 
-1588093400 source:c:\users\rvn\documents\github\bincuk\tubesstd\menu.cpp
+1588099497 source:c:\users\rvn\documents\github\bincuk\tubesstd\menu.cpp
 	"novel.h"
 	"penulis.h"
 	"menu.h"
 
-1588088761 source:c:\users\rvn\documents\github\bincuk\tubesstd\novel.cpp
+1588099288 source:c:\users\rvn\documents\github\bincuk\tubesstd\novel.cpp
 	<iostream>
 	"novel.h"
 
-1588088762 source:c:\users\rvn\documents\github\bincuk\tubesstd\penulis.cpp
+1588099354 source:c:\users\rvn\documents\github\bincuk\tubesstd\penulis.cpp
 	<iostream>
 	"penulis.h"
 	"novel.h"

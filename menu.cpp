@@ -166,7 +166,7 @@ void SNP(ListN LN, ListP LP){
         adrN N = first(LN);
         while (N!=NULL) {
             bool f = false;
-            cout<<"Novel "<<info(N)<<" ditulis oleh: "<<endl;
+            cout<<"Novel "<<info(N)<<" written by: "<<endl;
             adrP P = first(LP);
             while (P!=NULL) {
                 adrR R = firstR(P);
@@ -199,7 +199,7 @@ void SNW(ListN LN, ListP LP) {
     } else {
         bool f = false;
         adrN N = first(LN);
-        cout<<"Novel yang ditulis oleh 2 penulis: "<<endl;
+        cout<<"Novel written by 2 authors: "<<endl;
         while (N!=NULL) {
             int i = 0;
             adrP P = first(LP);
@@ -233,15 +233,11 @@ void SNM(ListP LP, ListN LN) {
     cout<<"  Show Author(s) Who Wrote The Most"<<endl;
     cout<<"--------------------------------------"<<endl;
     if (first(LP)==NULL && first(LN)==NULL) {
-        cout<<"List is empty"<<endl;
+        cout<<"List is empty."<<endl;
     } else {
         adrP P = first(LP);
-        adrP Q;
         int Max = 0;
-<<<<<<< Updated upstream
-=======
         cout<<"Author(s) who wrote novel the most is/are: "<<endl;
->>>>>>> Stashed changes
         while (P!=NULL) {
             int i = 0;
             adrR R = firstR(P);
@@ -251,11 +247,22 @@ void SNM(ListP LP, ListN LN) {
             }
             if (Max<i){
                 Max = i;
-                Q = P;
             }
             P=next(P);
         }
-        cout<<"Salah satu penulis yang menulis novel paling banyak adalah "<<info(Q)<<endl;
+        P = first(LP);
+        while (P!=NULL) {
+            int i = 0;
+            adrR R = firstR(P);
+            while (R!=NULL) {
+                i++;
+                R=nextR(R);
+            }
+            if (Max==i) {
+                cout<<"- "<<info(P)<<endl;
+            }
+            P=next(P);
+        }
     }
     cout<<endl;
     cout<<"______________________________________"<<endl;
@@ -272,7 +279,6 @@ void SCA(ListN LN, ListP LP) {
         adrP P = first(LP);
         int i;
         cout<<"Author who never collaborate: "<<endl;
->>>>>>> Stashed changes
         while (P!=NULL) {
             i = 0;
             adrR R = firstR(P);
@@ -312,12 +318,12 @@ void showPN(ListP LP, ListN LN) {
     cout<<"     Show All Authors and Novels"<<endl;
     cout<<"--------------------------------------"<<endl;
     if (first(LP)==NULL && first(LN)==NULL) {
-        cout<<"List is empty."<<endl;
+        cout<<"List is empty"<<endl;
     } else {
         adrP P = first(LP);
-        cout<<"List penulis yang terdaftar:"<<endl;
+        cout<<"Registered author:"<<endl;
         while (P != NULL) {
-            cout << "Penulis: " << info(P) << endl;
+            cout << "Author: " << info(P) << endl;
             adrR Q = firstR(P);
             if (Q != NULL) {
                 while (Q != NULL) {
@@ -328,8 +334,6 @@ void showPN(ListP LP, ListN LN) {
             } else {
                 cout<<"Novel could not be found."<<endl;
                 cout<<endl;
-
-
             }
             P = next(P);
         }
@@ -352,18 +356,13 @@ void SPN (ListN LN, ListP LP) {
         adrP p = findP(LP, penulis);
         if (p!=NULL) {
             cout<<"Novel(s) that written by "<<info(p)<<" is/are:"<<endl;
->>>>>>> Stashed changes
             adrR r = firstR(p);
             while (r!=NULL) {
                 cout<<"- "<<infoR(r)<<endl;
                 r=nextR(r);
             }
         } else {
-<<<<<<< Updated upstream
-            cout<<"Penulis tidak ditemukan"<<endl;
-=======
             cout<<"The Author could not be found."<<endl;
->>>>>>> Stashed changes
         }
     }
     cout<<endl;
@@ -377,7 +376,6 @@ void manual(ListP LP, ListN LN) {
     cout<<"1. Type 'stop' to stop registering/connecting or back to main menu."<<endl;
     cout<<"3. Type '13' to clear the screen."<<endl;
     cout<<"3. Type '14' to close the program."<<endl;
->>>>>>> Stashed changes
     cout<<endl;
     cout<<"______________________________________"<<endl;
     menu(LP, LN);
@@ -390,12 +388,6 @@ void menu(ListP &LP, ListN &LN) {
     adrN N;
     adrR R;
 
-<<<<<<< Updated upstream
-    cout<<"Menu Program: "<<endl;
-	cout<<"1. Add Author"<<"                                  "<<"7. Show Novel Written by 2 Author"<<endl;
-	cout<<"2. Add Novel"<<"                                   "<<"8. Show Author Who Wrote The Most"<<endl;
-	cout<<"3. Connecting"<<"                                  "<<"9. Show Independent Author"<<endl;
-=======
     cout<<"Program's Features: "<<endl;
 	cout<<"1. Add Author"<<"                                  "<<"7. Show Novel(s) Written by 2 Authors"<<endl;
 	cout<<"2. Add Novel"<<"                                   "<<"8. Show Author(s) Who Wrote The Most"<<endl;
@@ -405,11 +397,7 @@ void menu(ListP &LP, ListN &LN) {
 	cout<<"6. Show Novel(s) With Particular Author"<<"        "<<"12. Manual"<<endl;
 
 	cout<<endl;
-<<<<<<< Updated upstream
-	cout<<"Pilih menu: ";
-=======
 	cout<<"Choose a feature: ";
->>>>>>> Stashed changes
 	cin>>x;
 	system("CLS");
 	if (x==1) {
