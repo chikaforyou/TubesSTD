@@ -272,7 +272,7 @@ void SNM(ListP LP, ListN LN) {
                     R=nextR(R);
                 }
                 if (Max==i) {
-                    cout<<"- "<<info(P)<<endl;
+                    cout<<"- "<<info(P)<<" wrote "<<Max<<" Novel(s)"<<endl;
                 }
                 P=next(P);
             }
@@ -417,9 +417,9 @@ void menu(ListP &LP, ListN &LN) {
     adrR R;
 
     cout<<"Program's Features: "<<endl;
-	cout<<"1. Add Author"<<"                                  "<<"7. Show Novel(s) Written by 2 Authors"<<endl;
-	cout<<"2. Add Novel"<<"                                   "<<"8. Show Author(s) Who Wrote The Most"<<endl;
-	cout<<"3. Connecting"<<"                                  "<<"9. Show Author(s) Who Never Collaborate"<<endl;
+	cout<<"1. Add Author"<<"                                  "<<"7.  Show Novel(s) Written by 2 Authors"<<endl;
+	cout<<"2. Add Novel"<<"                                   "<<"8.  Show Author(s) Who Wrote The Most"<<endl;
+	cout<<"3. Connecting"<<"                                  "<<"9.  Show Author(s) Who Never Collaborate"<<endl;
 	cout<<"4. Delete Author "<<"                              "<<"10. Show All Authors and Novels"<<endl;
 	cout<<"5. Delete Novel"<<"                                "<<"11. Show All Novels and Authors"<<endl;
 	cout<<"6. Show Novel(s) With Particular Author"<<"        "<<"12. Manual"<<endl;

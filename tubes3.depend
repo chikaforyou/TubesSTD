@@ -133,7 +133,7 @@
 	"penulis.h"
 	"novel.h"
 
-1588102952 source:e:\git\newest\tubesstd\main.cpp
+1588102536 source:e:\git\newest\tubesstd\main.cpp
 	<iostream>
 	"penulis.h"
 	"novel.h"
@@ -162,4 +162,29 @@
 	"Novel.h"
 	"penulis.h"
 	"menu.h"
+
+1588102952 source:e:\kuliah\semester 2\std\backup tubes\main.cpp
+	<iostream>
+	"penulis.h"
+	"novel.h"
+	"menu.h"
+
+1588098457 e:\kuliah\semester 2\std\backup tubes\penulis.h
+	<iostream>
+
+1588098457 e:\kuliah\semester 2\std\backup tubes\novel.h
+	<iostream>
+
+1588098457 e:\kuliah\semester 2\std\backup tubes\menu.h
+	<conio.h>
+	<stdlib.h>
+
+1588102630 source:e:\kuliah\semester 2\std\backup tubes\novel.cpp
+	<iostream>
+	"novel.h"
+
+1588102536 source:e:\kuliah\semester 2\std\backup tubes\penulis.cpp
+	<iostream>
+	"penulis.h"
+	"novel.h"
 
