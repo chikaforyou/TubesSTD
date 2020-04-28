@@ -61,16 +61,16 @@
 	<conio.h>
 	<stdlib.h>
 
-1588045426 source:e:\new folder\tubesstd\novel.cpp
+1588085398 source:e:\new folder\tubesstd\novel.cpp
 	<iostream>
 	"novel.h"
 
-1588045426 source:e:\new folder\tubesstd\penulis.cpp
+1588085398 source:e:\new folder\tubesstd\penulis.cpp
 	<iostream>
 	"penulis.h"
 	"novel.h"
 
-1588045375 source:e:\new folder\tubesstd\menu.cpp
+1588085894 source:e:\new folder\tubesstd\menu.cpp
 	"novel.h"
 	"penulis.h"
 	"menu.h"

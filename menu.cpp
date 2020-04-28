@@ -187,8 +187,8 @@ void SNM(ListP LP, ListN LN) {
         cout<<"List is empty"<<endl;
     } else {
         adrP P = first(LP);
-        adrP Q;
         int Max = 0;
+        cout<<"Author who had written the most novel: "<<endl;
         while (P!=NULL) {
             int i = 0;
             adrR R = firstR(P);
@@ -198,11 +198,22 @@ void SNM(ListP LP, ListN LN) {
             }
             if (Max<i){
                 Max = i;
-                Q = P;
             }
             P=next(P);
         }
-        cout<<"One of author who had written the most novel is "<<info(Q)<<endl;
+        P = first(LP);
+        while (P!=NULL) {
+            int i = 0;
+            adrR R = firstR(P);
+            while (R!=NULL) {
+                i++;
+                R=nextR(R);
+            }
+            if (Max==i) {
+                cout<<"- "<<info(P)<<endl;
+            }
+            P=next(P);
+        }
     }
     cout<<endl;
     cout<<"______________________________________"<<endl;
